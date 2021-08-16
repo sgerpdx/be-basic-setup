@@ -1,6 +1,8 @@
-const fs = require('fs').promises;
+const fs = require("fs").promises;
+//alt new syntax: import {promises as fs} from 'fs';
 
 module.exports = (pool) => {
-    return fs.readFile(`${__dirname}/../sql/setup.sql`, { encoding 'utf-8' })
-        .then(sql => pool.query(sql));
+  return fs
+    .readFile("./sql/setup.sql", { encoding: "utf-8" })
+    .then((sql) => pool.query(sql));
 };
